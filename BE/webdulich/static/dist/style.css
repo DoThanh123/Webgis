@@ -1,0 +1,53 @@
+::-webkit-scrollbar {
+    width: 1px; /* Chiều rộng thanh cuộn dọc */
+    height: 1px; /* Chiều cao thanh cuộn ngang */
+}
+
+#map {
+    width: 100%;
+    height: calc(100vh - 56px);
+    top: 62px;
+}
+
+.map-coordinate {
+    position: absolute;
+    bottom: 4px;
+    left: 6%;
+    font-size: 14px;
+    background-color: #ccc;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.full-screen {
+    padding: 6px;
+}
+
+.zoom-to-layer {
+    padding: 6px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 600;
+}

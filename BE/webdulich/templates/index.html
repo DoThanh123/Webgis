@@ -1,0 +1,75 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="{% static './lib/MarkerCluster.css' %}">
+    <link rel="stylesheet" href="{% static './lib/MarkerCluster.Default.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static './dist/style.css'%}">
+
+    <title>Du Lịch Quảng Bình</title>
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">DU LỊCH QUẢNG BÌNH</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="menu navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/">GIỚI THIỆU</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/travels/">ĐIỂM DU LỊCH</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/events/">SỰ KIỆN</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/info/">THÔNG TIN CẦN BIẾT</a>
+            </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div id="map">
+        <!-- Tọa độ map -->
+        <div class="leaflet-control map-coordinate">
+            <div class="coordinate"></div>
+        </div>
+        <!-- Toàn màn hình -->
+         <div class="leaflet-control full-screen">
+             <button onclick="fullScreenView()">
+                <i class="fa-solid fa-expand"></i>
+             </button>
+         </div>
+         <!-- Về điểm ban đầu -->
+         <div class="leaflet-control zoom-to-layer">
+            <button><i class="fa-solid fa-house"></i></button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="{% static './lib/leaflet.markercluster.js'%}"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script src="{% static './lib/L.Geoserver.js' %}"></script>
+<script src="{% static './dist/main.js'%}"></script>
+<script src="{% static './dist/web-GIS.js'%}"></script>
