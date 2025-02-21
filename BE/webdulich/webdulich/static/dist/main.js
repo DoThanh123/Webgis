@@ -24,6 +24,28 @@ L.control.scale().addTo(map)
 map.on('mousemove', function (e) {
     $('.coordinate').html('Lat: ' + e.latlng.lat + ' Lng: ' + e.latlng.lng)
 })
+//Hiển thị tọa độ bản thân
+function locateUser() {  
+      
+}
+
+function onLocationFound(e) {  
+    var radius = e.accuracy / 2;  
+
+    // Thêm vòng tròn thể hiện phạm vi quanh vị trí  
+    L.marker(e.latlng).addTo(map).bindPopup("Bạn đang ở đây!").openPopup();  
+    L.circle(e.latlng, radius).addTo(map);  
+    map.setView(e.latlng, 13); // Đặt view của bản đồ về vị trí người dùng  
+}  
+
+function onLocationError(e) {  
+    alert(e.message);  
+}  
+$('.locate').click(function() {
+    map.locate({setView: true, maxZoom: 13}) // Tìm vị trí người dùng
+})
+map.on('locationfound', onLocationFound);  
+map.on('locationerror', onLocationError); 
 
 // Lưu lớp vào đối tượng overLayMaps
 var overLayMaps = {
