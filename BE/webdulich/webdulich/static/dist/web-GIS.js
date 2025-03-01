@@ -1,10 +1,16 @@
 //Toàn màn hình
 var mapId = document.getElementById('map')
+var fullScreen = false
+document.getElementById("fullScreenView").title = 'Toàn màn hình'
 function fullScreenView() {
     if (document.fullscreenElement) {
         document.exitFullscreen()
+        document.getElementById("fullScreenView").title = 'Toàn màn hình'
+        fullScreen = false
     } else {
         mapId.requestFullscreen()
+        document.getElementById("fullScreenView").title = 'Thoát toàn màn hình'
+        fullScreen = true
     }
 }
 

@@ -3,6 +3,10 @@
     height: 1px; /* Chiều cao thanh cuộn ngang */
 }
 
+body {
+    background-color: #e2e2e5;
+}
+
 #map {
     width: 100%;
     height: calc(100vh - 56px);
@@ -20,15 +24,7 @@
     border-radius: 2px;
 }
 
-.full-screen {
-    padding: 6px;
-}
-
-.locate {
-    padding: 6px;
-}
-
-.zoom-to-layer {
+.full-screen, .locate,.zoom-to-layer,.route {
     padding: 6px;
 }
 

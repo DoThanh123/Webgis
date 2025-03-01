@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <link rel="stylesheet" href="{% static './lib/MarkerCluster.css' %}">
     <link rel="stylesheet" href="{% static './lib/MarkerCluster.Default.css' %}">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />  
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -51,19 +52,23 @@
             <div class="coordinate"></div>
         </div>
         <!-- Toàn màn hình -->
-         <div class="leaflet-control full-screen">
-             <button onclick="fullScreenView()">
+         <div class="leaflet-control full-screen" >
+             <button onclick="fullScreenView()" id="fullScreenView"style="font-size: 21px; margin-top: 4px; width: 34px; height: 34px;">
                 <i class="fa-solid fa-expand"></i>
              </button>
          </div>
          <!-- Về điểm ban đầu -->
-         <div class="leaflet-control zoom-to-layer">
-            <button><i class="fa-solid fa-house"></i></button>
+         <div class="leaflet-control zoom-to-layer" id="home" >
+            <button style="font-size: 16px; width: 34px; height: 34px;"><i class="fa-solid fa-house"></i></button>
         </div>
         <!-- Định vị bản thân -->
-        <div class="leaflet-control locate">
-          <button><i class="fa-solid fa-location-dot"></i></button>
-      </div>
+        <div class="leaflet-control locate" id="locate">
+          <button onclick="onLocationFound()" style="font-size: 20px; width: 34px; height: 34px;"><i class="fa-solid fa-location-dot"></i></button>
+        </div>
+        <!-- Hiển thị đường đi -->
+        <div class="leaflet-control route" id="route">
+          <button style="font-size: 20px; width: 34px; height: 34px;"><i class="fa-solid fa-route"></i></button>
+        </div>
     </div>
 </body>
 
@@ -77,3 +82,4 @@
 <script src="{% static './lib/L.Geoserver.js' %}"></script>
 <script src="{% static './dist/main.js'%}"></script>
 <script src="{% static './dist/web-GIS.js'%}"></script>
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
